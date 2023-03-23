@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Kawasaki AS-language
 " Maintainer: Patrick Meiser-Knosowski <knosowski@graeffrobotics.de>
-" Version: 1.0.0
+" Version: 1.0.1
 " Last Change: 23. Mar 2023
 "
 " Note to self:
@@ -147,7 +147,7 @@ syn keyword asStatement SIN SINGULAR SJUMP SLAVE SLOAD SLOW SLOW_REPEAT SLOW_STA
 syn keyword asStatement STRGCLR STRGSET STRGSETIO STRGSTART STRGSTOP STRTOPOS STRTOVAL
 syn keyword asStatement SVALUE SWAIT SYSDATA SYSINIT SYSINIT/SW SYSINIT/U
 syn keyword asStatement TASK TASKNO TDRAW TEACH_LOCK TILL TIME TIMER TOOL TOOLSHAPE TOUCH.ENA TOUCHST.ENA TPKEY_A TPKEY_S TPLIGHT TPSPEED.RESET TRACE TRADD TRANS TRIGGER TRSUB TWAIT TYPE
-syn keyword asStatement ULIMIT UNTIL
+syn keyword asStatement ULIMIT
 syn keyword asStatement USB_COPY USB_FDEL USB_FDIR USB_LOAD USB_MKDIR USB_RENAME USB_SAVE/A USB_SAVE/ALLLOG USB_SAVE/ELOG USB_SAVE/FULL USB_SAVE/L USB_SAVE/OPLOG USB_SAVE/P USB_SAVE/R USB_SAVE/ROB USB_SAVE/S USB_SAVE/STG USB_SAVE/SYS USB_SAVE
 syn keyword asStatement USE_ISO8859_5 UTIMER UWRIST
 syn keyword asStatement VAL VALUE
@@ -157,10 +157,10 @@ syn keyword asStatement ZALLPGKILL ZAREASLOWMODE ZAREASLOWRATE ZAREASLOWSET ZINT
 
 highlight default link asStatement Statement
 " Conditional
-syn keyword asConditional IF THEN ELSE ELSEIF END CASE OF VALUE ANY
+syn keyword asConditional IF THEN ELSE ELSEIF END CASE SCASE OF VALUE SVALUE ANY
 highlight default link asConditional Conditional
 " Repeat
-syn keyword asRepeat FOR TO WHILE DO
+syn keyword asRepeat FOR TO WHILE DO UNTIL
 highlight default link asRepeat Repeat
 " Label
 syn keyword asLabel GOTO
