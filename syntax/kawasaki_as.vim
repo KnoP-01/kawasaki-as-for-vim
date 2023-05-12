@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language: Kawasaki AS-language
 " Maintainer: Patrick Meiser-Knosowski <knosowski@graeffrobotics.de>
-" Version: 1.0.1
-" Last Change: 24. Mar 2023
+" Version: 1.0.2
+" Last Change: 12. May 2023
 "
 " Note to self:
 " for testing perfomance
@@ -154,7 +154,7 @@ syn keyword asStatement CALL CBSMON_EXTDISABLE CBSMON_EXTENABLE CBSMON_SETDEVICE
 syn keyword asStatement DECEL DECMPCOLR DECMPCOLRJ DECOMPOSE DEFSIG DEG/MIN DEG/S DELAY DELETE DIRECTORY DLYSIG DRAW DWRIST 
 syn keyword asStatement EDIT ENA_TOOLSHAPE ENC_TEMP ENCCHK_EMG ENCCHK_PON ENV_DATA ENV2_DATA ERESET ERR_ALLROBSTOP ERRLOG EXECUTE EXTCALL
 syn match asStatement /\c\v^\s*ENVCHKRATE>/
-syn keyword asStatement FB_PORT_ASSIGN FB_RESET_ABCC FB_S_CCL FB_SET_WORD FB_SIG_ORDER FFRESET FFSET FFSET_STATUS FINE FREE
+syn keyword asStatement FHERE FTOOL FB_PORT_ASSIGN FB_RESET_ABCC FB_S_CCL FB_SET_WORD FB_SIG_ORDER FFRESET FFSET FFSET_STATUS FINE FREE
 syn keyword asStatement GETLLMIT GETULIMIT GUNOFF GUNOFFTIMER GUNON GUNONTIMER
 syn keyword asStatement HALT HELP HELP/DO HELP/F HELP/M HELP/MC HELP/P HELP/PPC HELP/SW HOLD HOME HSENSE HSENSESET HSETCLAMP
 syn match asStatement /\c\v^\s*HERE>/
@@ -202,7 +202,7 @@ syn keyword asRepeat FOR TO WHILE DO UNTIL
 highlight default link asRepeat Repeat
 " Label
 syn keyword asLabel GOTO
-syn match asLabel /^\s*\w\+:\ze\s*\%(;.*\)\?$/
+" syn match asLabel /^\s*\w\+:\ze\s*\%(;.*\)\?$/
 highlight default link asLabel Label
 " }}} Statements, keywords et al
 
