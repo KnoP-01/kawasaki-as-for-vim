@@ -2,7 +2,7 @@
 " Language: Kawasaki AS-language
 " Maintainer: Patrick Meiser-Knosowski <knosowski@graeffrobotics.de>
 " Version: 1.0.1
-" Last Change: 14. Aug 2023
+" Last Change: 17. Sep 2026
 "
 
 " Init {{{
@@ -21,9 +21,10 @@ set cpo&vim
 " Vim Settings {{{
 
 " default on; no option
+setlocal suffixesadd+=.pg
 setlocal commentstring=;%s
 setlocal comments=:\;
-let b:undo_ftplugin = "setlocal com< cms<"
+let b:undo_ftplugin = "setlocal sua< com< cms<"
 
 " auto insert comment char when i_<CR>, o or O on a comment line
 if get(g:,'asAutoComment',1)
@@ -35,7 +36,7 @@ endif
 " format comments
 if get(g:,'asFormatComments',1)
   if &textwidth ==# 0
-    " 78 Chars 
+    " 78 Chars
     setlocal textwidth=78
     let b:undo_ftplugin = b:undo_ftplugin." tw<"
   endif
