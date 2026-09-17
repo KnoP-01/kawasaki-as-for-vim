@@ -2,7 +2,7 @@
 " Language: Kawasaki AS-language
 " Maintainer: Patrick Meiser-Knosowski <knosowski@graeffrobotics.de>
 " Version: 1.0.0
-" Last Change: 23. Mar 2023
+" Last Change: 17. Sep 2026
 "
 
 let s:keepcpo = &cpo

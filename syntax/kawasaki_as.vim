@@ -2,7 +2,7 @@
 " Language: Kawasaki AS-language
 " Maintainer: Patrick Meiser-Knosowski <knosowski@graeffrobotics.de>
 " Version: 1.0.2
-" Last Change: 14. Aug 2023
+" Last Change: 17. Sep 2026
 "
 " Note to self:
 " for testing perfomance
