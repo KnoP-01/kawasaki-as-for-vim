@@ -23,22 +23,22 @@ set cpo&vim
 " if colorscheme is tortus(less)? asGroupName defaults to 1
 if get(g:, 'colors_name', " ") =~ '\<tortus'
       \&& !exists("g:asGroupName")
-  let g:asGroupName=1 
+  let g:asGroupName=1
 endif
 " asGroupName defaults to 0 if it's not initialized yet or 0
 if !get(g:, "asGroupName", 0)
-  let g:asGroupName = 0 
+  let g:asGroupName = 0
 endif
 
 " AS does ignore case
 syn case ignore
 " take . into keyword (syntax only)
-syn iskeyword @,48-57,_,192-255,#,$,.,/
+syn iskeyword @,48-57,_,192-255,#,$,.
 " spell checking
 syn spell notoplevel
 " }}} init
 
-" Comment and Folding {{{ 
+" Comment and Folding {{{
 
 " Special Comment
 
@@ -54,7 +54,7 @@ highlight default link asDebug Debug
 syn match asComment /;.*$/ contains=asTodo,asDebug,@Spell
 highlight default link asComment Comment
 
-" }}} Comment and Folding 
+" }}} Comment and Folding
 
 " Header {{{
 syn match asHeader /^\.\u[A-Z0-9_]*/
@@ -81,10 +81,10 @@ highlight default link asDelimiter Delimiter
 
 " Constant values {{{
 " General
-syn keyword asConstValue NULL PI 
+syn keyword asConstValue NULL PI
 highlight default link asConstValue Constant
 " Boolean
-syn keyword asBoolean ON OFF TRUE FALSE 
+syn keyword asBoolean ON OFF TRUE FALSE
 highlight default link asBoolean Boolean
 " Binary integer
 syn match asBinaryInt /^b[01]\+'/
@@ -150,46 +150,45 @@ syn keyword asStatement BATCHK BELOW BREAK BSPEED BY
 syn match asStatement /\c\v^\s*BASE>/
 syn match asStatement /\c\v^\s*BITS>/
 syn match asStatement /\c\v^\s*BITS32>/
-syn keyword asStatement CALL CBSMON_EXTDISABLE CBSMON_EXTENABLE CBSMON_SETDEVICE CHSUM CLAMP CLOSE CLOSEI CLOSES CM/MIN CM/S COM CONTINUE COOP.DRIVE.EX1 COOP.DRIVE.EX2 COOPSTATUS COPY CURLIM CVRESETSIG_DELAY 
-syn keyword asStatement DECEL DECMPCOLR DECMPCOLRJ DECOMPOSE DEFSIG DEG/MIN DEG/S DELAY DELETE DIRECTORY DLYSIG DWRIST 
+syn keyword asStatement CALL CBSMON_EXTDISABLE CBSMON_EXTENABLE CBSMON_SETDEVICE CHSUM CLAMP CLOSE CLOSEI CLOSES COM CONTINUE COOP.DRIVE.EX1 COOP.DRIVE.EX2 COOPSTATUS COPY CURLIM CVRESETSIG_DELAY
+syn keyword asStatement DECEL DECMPCOLR DECMPCOLRJ DECOMPOSE DEFSIG DELAY DELETE DIRECTORY DLYSIG DWRIST
 syn keyword asStatement EDIT ENA_TOOLSHAPE ENC_TEMP ENCCHK_EMG ENCCHK_PON ENV_DATA ENV2_DATA ERESET ERR_ALLROBSTOP ERRLOG EXECUTE EXTCALL
 syn match asStatement /\c\v^\s*ENVCHKRATE>/
 syn keyword asStatement FHERE FTOOL FB_PORT_ASSIGN FB_RESET_ABCC FB_S_CCL FB_SET_WORD FB_SIG_ORDER FFRESET FFSET FFSET_STATUS FINE FREE
 syn keyword asStatement GETLLMIT GETULIMIT GUNOFF GUNOFFTIMER GUNON GUNONTIMER
-syn keyword asStatement HALT HELP HELP/DO HELP/F HELP/M HELP/MC HELP/P HELP/PPC HELP/SW HOLD HSENSE HSENSESET HSETCLAMP
+syn keyword asStatement HALT HOLD HSENSE HSENSESET HSETCLAMP
 syn match asStatement /\c\v^\s*HERE>/
-syn keyword asStatement ID IFPDISP IFPLABEL IFPTITLE IFPWOVERWRITE IFPWPRINT IGNORE INPUT INS_POWER INTFCHK IO IO/E IPEAKCLR IPEAKLOG 
+syn keyword asStatement ID IFPDISP IFPLABEL IFPTITLE IFPWOVERWRITE IFPWPRINT IGNORE INPUT INS_POWER INTFCHK IO IPEAKCLR IPEAKLOG
 syn keyword asStatement JUMP
 syn keyword asStatement KILL
 syn keyword asStatement L3ACCURACY L3ARMSLOWMODE L3ARMSLOWRATE L3ARMSLOWSET L3JNT L3LINKSLOWMODE L3LINKSLOWRATE L3LINKSLOWSET L3SPEED L3TOOL L3TRN
-syn keyword asStatement LANGUAGE LEFTY LIST LIST/P LIST/L LIST/R LIST/S LLIMIT LOAD/F LOAD/Q LOAD LOCK LSTRACE
-syn keyword asStatement MASTER MC MHERE MM/MIN MM/S MNTINFOGET MOD MON_TWAIT MSTEP MVWAIT
+syn keyword asStatement LANGUAGE LEFTY LLIMIT LOAD LOCK LSTRACE
+syn keyword asStatement MASTER MC MHERE MNTINFOGET MOD MON_TWAIT MSTEP MVWAIT
 syn keyword asStatement NCHOFF NCHON NEXT NLOAD NOEXIST_SET_L NOEXIST_SET_R NOEXIST_SET_S
-syn keyword asStatement ONE ONI OPEINFO OPEINFOCLR OPEN OPENI OPENS OPLOG OUTDA OUTPUT 
+syn keyword asStatement ONE ONI OPEINFO OPEINFOCLR OPEN OPENI OPENS OPLOG OUTDA OUTPUT
 syn keyword asStatement PALMODE PAUSE PCABORT PCCONTINUE PCEND PCEXECUTE PCKILL PCSCAN PCSTATUS PCSTEP PLCAIN PLCAOUT PRIME PRINT PROMPT PULSE
-syn keyword asStatement POINT/10 POINT/11 POINT/12 POINT/13 POINT/14 POINT/15 POINT/16 POINT/17 POINT/18 POINT/7 POINT/8 POINT/9 POINT/A POINT/EXT POINT/OAT POINT/O POINT/T POINT/X POINT/Y POINT/Z POINT
-syn keyword asStatement REC REC_ACCEPT REFFLTRESET REFFLTSET REFFLTSET_STATUS RELAX RELAXI RELAXS RENAME RESET RESTRACE RETURN RETURNE RIGHTY 
-syn keyword asStatement ROBNET_TCHMASTER ROBNETID ROBNETROBOT ROBNETSIG RSIGCORRECT RSIGPOINT RSIGRANGE RUNMASK 
+syn keyword asStatement POINT
+syn keyword asStatement REC REC_ACCEPT REFFLTRESET REFFLTSET REFFLTSET_STATUS RELAX RELAXI RELAXS RENAME RESET RESTRACE RETURN RETURNE RIGHTY
+syn keyword asStatement ROBNET_TCHMASTER ROBNETID ROBNETROBOT ROBNETSIG RSIGCORRECT RSIGPOINT RSIGRANGE RUNMASK
 syn match asStatement /\c\v^\s*REPEAT>/
 syn keyword asStatement S_HERE
-syn keyword asStatement SAVE/ALLLOG SAVE/A SAVE/ELOG SAVE/FULL SAVE/L SAVE/OLOG SAVE/OPLOG SAVE/P SAVE/ROB SAVE/R SAVE/STG SAVE/SYS SAVE/S SAVE
+syn keyword asStatement SAVE
 syn keyword asStatement SC2RECEIVE SC2SEND SCALL SCASE SCNT SCNTRESET SCPROTOCOL SCSETSIO
 syn keyword asStatement SET_MAXTOOLSHAPENUM SET_TOOLSHAPE SET2HOME SETENCTEMP_THRES SETHOME SETOUTDA SETPICK SETPLACE SETTIME SETTRACE
 syn keyword asStatement SFLK SFLP SHUTDOWN
-syn keyword asStatement SIGNAL 
+syn keyword asStatement SIGNAL
 syn keyword asStatement SJUMP SLAVE SLOAD SLOW SLOW_REPEAT SOUT SPEED STABLE STATUS STEP STG_CHCOMBI STG_SAMPLING STG_START STG_STOP STIM STOP STPNEXT
-syn keyword asStatement STRGCLR STRGSET STRGSETIO STRGSTART STRGSTOP 
-syn keyword asStatement SVALUE SWAIT SYSDATA SYSINIT SYSINIT/SW SYSINIT/U
+syn keyword asStatement STRGCLR STRGSET STRGSETIO STRGSTART STRGSTOP
+syn keyword asStatement SVALUE SWAIT SYSDATA SYSINIT
 syn match asStatement /\c\v^\s*SWITCH>/
 syn keyword asStatement TASKNO TILL TIME TOOLSHAPE TPLIGHT TRACE TWAIT TYPE
 syn match asStatement /\c\v^\s*TIMER>/
 syn match asStatement /\c\v^\s*TOOL>/
 syn keyword asStatement ULIMIT
-syn keyword asStatement USB_COPY USB_FDEL USB_FDIR USB_LOAD USB_MKDIR USB_RENAME USB_SAVE/A USB_SAVE/ALLLOG USB_SAVE/ELOG USB_SAVE/FULL USB_SAVE/L USB_SAVE/OPLOG USB_SAVE/P USB_SAVE/R USB_SAVE/ROB USB_SAVE/S USB_SAVE/STG USB_SAVE/SYS USB_SAVE
 syn keyword asStatement UWRIST
 syn match asStatement /\c\v^\s*UTIMER>/
 syn keyword asStatement VALUE
-syn keyword asStatement WAIT WEIGHT WHERE 
+syn keyword asStatement WAIT WEIGHT WHERE
 syn keyword asStatement XD XFER XP XQ XS XY
 syn keyword asStatement ZALLPGKILL ZAREASLOWMODE ZAREASLOWRATE ZAREASLOWSET ZINTFTOOLMDL ZINTFXLINK2BRAD ZINTFXLINK2RAD ZINTFXLINKRAD ZL3LINK2BOX ZPOWER ZRMTSET ZRMTSET2 ZSIGMAP ZSIGMAP_CLEAR ZSIGSPEC ZSOFT_EXCHANGE ZSOFT_EXCHANGE_AUTO ZZERO
 
@@ -209,8 +208,10 @@ highlight default link asLabel Label
 " special keywords for movement commands {{{
 syn keyword asMovement ALIGN BRAKE C2MOVE C2MOVE CVLDEPART CVJMOVE CVLAPPRO CVL3LMOVE CVMLJMOVE CVMLL3LMOVE DRIVE FJMOVE FLMOVE CVHMOVE HMOVE JMOVE L3C1MOVE L3C2MOVE L3LMOVE LMOVE MLC1MOVE MLC2MOVE MLJMOVE MLLMOVE MLZL3LMOVE MRC1MOVE MRC2MOVE MRLMOVE XMOVE
 syn keyword asMovement HOME
-syn keyword asMovement DRAW TDRAW 
-syn keyword asMovement JAPPRO JDEPART LAPPRO LDEPART 
+syn keyword asMovement DRAW TDRAW
+syn keyword asMovement JAPPRO JDEPART LAPPRO LDEPART
+" interpolation mode of a block step; LIN2, CIR1, CIR2 and FLIN 
+syn keyword asMovement JOINT LINEAR LIN2 CIR1 CIR2 FLIN
 if g:asGroupName
   highlight default link asMovement Movement
 else
@@ -219,15 +220,15 @@ endif
 " }}} special keywords for movement commands
 
 " BuildInFunction {{{
-syn keyword asBuildInFunction contained ABS ASC ATAN2 AVE_TRANS 
-syn keyword asBuildInFunction contained BASE BITS BITS32 CCENTER $CHR COS CSHIFT CURLIMM CURLIMP 
+syn keyword asBuildInFunction contained ABS ASC ATAN2 AVE_TRANS
+syn keyword asBuildInFunction contained BASE BITS BITS32 CCENTER $CHR COS CSHIFT CURLIMM CURLIMP
 syn keyword asBuildInFunction contained $DATE $DECODE DEST #DEST DEXT DISTANCE DX DY DZ
-syn keyword asBuildInFunction contained $ENCODE ERROR $ERROR $ERRORS $ERRLOG ENVCHKRATE $LEFT 
+syn keyword asBuildInFunction contained $ENCODE ERROR $ERROR $ERRORS $ERRLOG ENVCHKRATE $LEFT
 syn keyword asBuildInFunction contained EXISTCHAR EXISTDATA EXISTINTEGER EXISTJOINT EXISTLOCALCHAR EXISTLOCALINTEGER EXISTLOCALJOINT EXISTLOCALREAL EXISTLOCALTRANS EXISTPGM EXISTREAL EXISTTRANS
-syn keyword asBuildInFunction contained FRAME GETENCTEMP #HOME INRANGE INSTR INT IQARM LEN MAXINDEX MAXVAL $MID MININDEX MINVAL RIGHT SWITCH TASK 
-syn keyword asBuildInFunction contained $TIME TIMER TIME_MS #PPOINT REPLACE $RIGHT ROUND RX RY RZ 
-syn keyword asBuildInFunction contained SHIFT SIG SIG2 SIN $SPACE SQRT STR_ID STR_ID2 STRTOPOS STRTOVAL SYSDATA $SYSDATA TRADD TRANS TRQNM TRSUB UTIMER VAL 
-syn keyword asBuildInFunction HERE #HERE MSPEED MSPEED2 PRIORITY TOOL WHICHTASK RANDOM 
+syn keyword asBuildInFunction contained FRAME GETENCTEMP #HOME INRANGE INSTR INT IQARM LEN MAXINDEX MAXVAL $MID MININDEX MINVAL RIGHT SWITCH TASK
+syn keyword asBuildInFunction contained $TIME TIMER TIME_MS #PPOINT REPLACE $RIGHT ROUND RX RY RZ
+syn keyword asBuildInFunction contained SHIFT SIG SIG2 SIN $SPACE SQRT STR_ID STR_ID2 STRTOPOS STRTOVAL SYSDATA $SYSDATA TRADD TRANS TRQNM TRSUB UTIMER VAL
+syn keyword asBuildInFunction HERE #HERE MSPEED MSPEED2 PRIORITY TOOL WHICHTASK RANDOM
 if g:asGroupName
   highlight default link asBuildInFunction BuildInFunction
 else
